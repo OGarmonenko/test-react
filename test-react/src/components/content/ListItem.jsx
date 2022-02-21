@@ -1,0 +1,15 @@
+import React from 'react';
+import CustomButton from "../custom/CustomButton";
+
+const ListItem = (props) => {
+  return (
+    <li>
+      <div style={{display: 'flex', height: '50px'}}>
+      <div>{props.record.item}  {props.record.date}</div>
+        <CustomButton onClick={()=> props.removeRecord(props.record)}>Delete</CustomButton>
+      </div>
+    </li>
+  );
+};
+
+export default ListItem;
