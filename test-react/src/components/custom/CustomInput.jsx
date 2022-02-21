@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './CustomInput.module.css';
 
 const CustomInput = (props) => {
   return (
-    <input {...props} />
+    <input className={styles.CInput} {...props} />
   );
 };
 

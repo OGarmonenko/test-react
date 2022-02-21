@@ -3,6 +3,7 @@ import CustomButton from "../custom/CustomButton";
 import CustomInput from "../custom/CustomInput";
 import CONSTANTS from "../constants/constants";
 import * as moment from 'moment'
+import styles from './Header.module.css'
 
 const Header = (props) => {
   const [record, setRecord] = useState('');
@@ -22,7 +23,7 @@ const Header = (props) => {
   }
 
   return (
-    <form style={{ height: CONSTANTS.HEIGHT_HEADER}}>
+    <form className={styles.wrapper_header} style={{ height: CONSTANTS.HEIGHT_HEADER}}>
       <CustomInput type={"text"} placeholder={"Enter record..."} value={record} onChange={e => setRecord(e.target.value)}/>
       <CustomButton disabled={!record.length} onClick={e => handleClickAdd(e)}> Add </CustomButton>
     </form>

@@ -1,6 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
+import styles from './List.module.css'
 import CONSTANTS from "../constants/constants";
 import ListItem from "./ListItem";
+
 
 const List = (props) => {
   const [scroll, setScroll] = useState(false);
@@ -22,12 +24,12 @@ const List = (props) => {
     (clientHeigth - divObserv.current.offsetTop) > 0 ? setScroll(false) : setScroll(true)
   }
   return (
-    <div>
+    <div className={styles.wrapperList}>
       <p style={{textAlign: "center"}}>{props.title}</p>
       <div style = {scroll
-        ? {height:clientHeigth-CONSTANTS.HEIGHT_HEADER, overflow: "auto"}
+        ? {height:document.documentElement.clientHeight-CONSTANTS.HEIGHT_HEADER, overflow: "auto"}
         : {height:listHeigth-CONSTANTS.HEIGHT_HEADER, overflow: "hidden"}}>
-      <ol>
+      <ol style={{margin:20}}>
       {props.records.map((record) =>
         <ListItem record={record} key={record.id} removeRecord={props.removeRecord}/>
       )}
