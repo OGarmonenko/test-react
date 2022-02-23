@@ -1,29 +1,25 @@
 import './App.css';
-import Header from './components/header/Header';
-import List from "./components/content/List";
+import Header from './components/common/header/Header';
+import Content from "./components/toMainPage/Content";
 
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 function App() {
   const [records, setRecords] = useState([]);
 
+
   const addRecord = (record) => {
-    setRecords([...records, record])
+    setRecords([...records, record]);
   }
 
   const removeRecord = (record) => {
-    setRecords(records.filter(r => r.id !== record.id))
+    setRecords(records.filter(r => r.id !== record.id));
   }
 
   return (
     <div>
-
       <Header addRecord={addRecord}/>
-
-      {!records.length
-        ? <h3 style={{textAlign: "center"}}>Not records</h3>
-        : <List records={records} title={"Current records:"} removeRecord={removeRecord}/>
-      }
+      <Content records={records} title={"Current records:"} removeRecord={removeRecord}/>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import styles from './CustomInput.module.css';
 
 const CustomInput = (props) => {
   return (
-    <input className={styles.CInput} {...props} />
+    <input className={ styles.CInput } {...props} />
   );
 };
 
