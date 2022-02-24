@@ -1,8 +1,0 @@
-{
-  "mapping": {
-    "paths": {
-      "App": ["src/App"],
-      "Custom": ["src/components/custom/*"]
-    }
-  }
-}
