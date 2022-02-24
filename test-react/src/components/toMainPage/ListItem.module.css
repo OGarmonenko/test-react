@@ -1,16 +1,47 @@
-.wrapperLi{
+.wrapperLi {
     padding: 15px 0px;
     line-height: 14px;
-    width: 450px;
+    width: 900px;
+    list-style-type: none;
 }
-.wrapperRecord{
+.wrapperRecord {
+    border: 1px solid black;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+.partRecord {
+    background-color: lavender;
 }
 .textRecord {
-    font-size: 14px;
-    padding-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+    width: 400px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+   /* white-space: nowrap;*/
 }
-.dateRecord {
-    font-size: 11px;
+
+/* Tooltip text */
+.textRecord .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
 }
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.textRecord:hover .tooltiptext {
+    visibility: visible;
+}
+

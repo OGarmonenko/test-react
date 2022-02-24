@@ -1,8 +1,7 @@
 import './App.css';
 import Header from './components/common/header/Header';
-import Content from "./components/toMainPage/Content";
-
-import React, {useEffect, useRef, useState} from "react";
+import Content from './components/toMainPage/Content';
+import React, {useState} from "react";
 
 function App() {
   const [records, setRecords] = useState([]);
@@ -10,11 +9,11 @@ function App() {
 
   const addRecord = (record) => {
     setRecords([...records, record]);
-  }
+  };
 
   const removeRecord = (record) => {
     setRecords(records.filter(r => r.id !== record.id));
-  }
+  };
 
   return (
     <div>

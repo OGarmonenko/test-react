@@ -1,6 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import styles from './List.module.css'
-import ListItem from "./ListItem";
+import styles from './List.module.css';
+import ListItem from './ListItem';
 
 const List = (props) => {
   return (
